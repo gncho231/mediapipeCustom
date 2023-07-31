@@ -155,6 +155,8 @@ def draw_landmarks(
   image_rows, image_cols, _ = image.shape
   idx_to_coordinates = {}
   for idx, landmark in enumerate(landmark_list.landmark):
+    if idx in [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 ,33]:
+      continue
     if ((landmark.HasField('visibility') and
          landmark.visibility < _VISIBILITY_THRESHOLD) or
         (landmark.HasField('presence') and
